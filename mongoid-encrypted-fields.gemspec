@@ -21,13 +21,14 @@ Gem::Specification.new do |gem|
   gem.require_path  = 'lib'
 
   gem.add_dependency 'mongoid', '>= 3'
-  gem.add_dependency 'json', '< 2' if RUBY_VERSION < '2.0'
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
   if RUBY_VERSION < '2.0'
+    gem.add_dependency 'json', '< 2'
     gem.add_development_dependency 'gibberish', '< 2'
   else
+    gem.add_dependency 'json'
     gem.add_development_dependency 'gibberish'
   end
   gem.add_development_dependency 'encrypted_strings', '~> 0.3'
